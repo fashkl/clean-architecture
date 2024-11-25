@@ -1,0 +1,17 @@
+spring:
+  jpa:
+    database: postgresql
+  datasource:
+    username: ${embedded.postgresql.user}
+    password: ${embedded.postgresql.password}
+    url: jdbc:postgresql://${embedded.postgresql.host}:${embedded.postgresql.port}/${embedded.postgresql.database}
+  kafka:
+    bootstrap-servers: ${embedded.kafka.saslPlaintext.brokerList}
+    properties:
+      security.protocol: SASL_PLAINTEXT
+      sasl.mechanism: PLAIN
+      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="${embedded.kafka.saslPlaintext.user}" password="${embedded.kafka.saslPlaintext.password}";
+      schema.registry.url: http://${embedded.kafka.schema-registry.host}:${embedded.kafka.schema-registry.port}
+      basic.auth.credentials.source: USER_INFO
+      schema.registry.basic.auth.user.info: ${embedded.kafka.schema-registry.username}:${embedded.kafka.schema-registry.password}
+      specific.avro.reader: true
