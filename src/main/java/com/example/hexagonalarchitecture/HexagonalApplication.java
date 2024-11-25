@@ -2,12 +2,13 @@ package com.example.hexagonalarchitecture;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 
 @SpringBootApplication
-public class HexagonalArchitectureApplication {
+@ConfigurationPropertiesScan
+public class HexagonalApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HexagonalArchitectureApplication.class, args);
+        SpringApplication.run(HexagonalApplication.class, args);
     }
-
 }

@@ -1,4 +1,4 @@
-package com.baraka.boms.domain.model;
+package com.example.hexagonalarchitecture.domain.model;
 
 public interface Microtype<T> {
 

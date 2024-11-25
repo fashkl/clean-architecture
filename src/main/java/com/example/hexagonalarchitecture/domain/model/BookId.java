@@ -1,21 +1,28 @@
-package com.baraka.boms.domain.model;
+package com.example.hexagonalarchitecture.domain.model;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static java.util.Objects.requireNonNull;
+import static java.util.UUID.randomUUID;
 
-public record AccountId(String value) implements Microtype<String> {
+import java.util.UUID;
 
-    public AccountId {
+public record BookId(UUID value) implements Microtype<UUID> {
+
+    public BookId {
         requireNonNull(value, "id");
-        checkArgument(!value.isBlank(), "id must not be blank");
+        checkArgument(!value.toString().isBlank(), "id must not be blank");
     }
 
-    public static AccountId accountId(String id) {
-        return new AccountId(id);
+    public static BookId bookId(UUID id) {
+        return new BookId(id);
+    }
+
+    public static BookId randomBookId() {
+        return bookId(randomUUID());
     }
 
     @Override
     public String toString() {
-        return value;
+        return value.toString();
     }
 }

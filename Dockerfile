@@ -12,8 +12,8 @@ RUN ./gradlew build -x test --no-daemon
 
 FROM eclipse-temurin:21-alpine
 WORKDIR /usr/src/app
-COPY --from=builder build/libs/b-account-ledger.jar /usr/src/app/b-account-ledger.jar
+COPY --from=builder build/libs/book-management.jar /usr/src/app/b-book-management.jar
 
 ENV JAVA_OPTS=""
 
-CMD java $JAVA_OPTS -jar b-account-ledger.jar
+CMD java $JAVA_OPTS -jar book-management.jar

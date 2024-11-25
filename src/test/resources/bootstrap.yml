@@ -3,8 +3,3 @@ embedded:
     database: "postgres"
     dockerImage: postgres:16-alpine
     enabled: true
-  kafka:
-    schema-registry:
-      enabled: true
-      avroCompatibilityLevel: BACKWARD_TRANSITIVE
-    topicsToCreate: "account_ledger_operations, account_ledger_accounts"

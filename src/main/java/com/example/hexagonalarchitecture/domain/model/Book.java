@@ -1,4 +1,7 @@
 package com.example.hexagonalarchitecture.domain.model;
 
-public record Book() {
-}
+import lombok.Builder;
+import lombok.NonNull;
+
+@Builder
+public record Book(@NonNull BookId id, @NonNull String title, @NonNull AuthorId author) {}

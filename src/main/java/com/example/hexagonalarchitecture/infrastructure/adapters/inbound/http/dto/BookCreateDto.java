@@ -1,4 +1,5 @@
 package com.example.hexagonalarchitecture.infrastructure.adapters.inbound.http.dto;
 
-public record BookCreateDto() {
-}
+import lombok.NonNull;
+
+public record BookCreateDto(@NonNull String title, @NonNull String author) {}
